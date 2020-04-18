@@ -1,0 +1,32 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "API to link front-end with back-end",
+  "main": "src/index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "file-system": "^2.2.2",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^7.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bgsis/system.git"
+  },
+  "keywords": [
+    "development"
+  ],
+  "author": "Anderson Vieira do Nascimento",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bgsis/system/issues"
+  },
+  "homepage": "https://github.com/bgsis/system#readme"
+}

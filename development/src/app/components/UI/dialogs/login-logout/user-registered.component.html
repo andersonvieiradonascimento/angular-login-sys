@@ -1,0 +1,16 @@
+<mat-dialog-content>
+    <p *ngIf="data"> Successfuly registered! </p>
+    <div *ngIf="!data">
+        <p>Something wrong!</p>
+        <b>Check:</b>
+        <ul type="">   
+            <li>Email or</li>
+            <li>Nickname or</li>
+            <li>Password</li>
+        </ul>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+</mat-dialog-actions>

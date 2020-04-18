@@ -1,0 +1,38 @@
+<div class="form">
+    <mat-card class="col-md-4">
+        <h4><b>Entrar</b></h4>
+        <form [formGroup]="form" (ngSubmit) = "checkInfoProvided()">
+            <mat-form-field class="col-md-12">
+                <input class="form-control"
+                formControlName="userinfo"
+                [formControl]="userinfo"
+                [errorStateMatcher]="matcher"
+                matInput placeholder="E-mail or nickname">
+                <mat-error *ngIf="userinfo.hasError('required')">
+                    <!-- Insira e-mail ou nome de usuário. -->
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-md-12">
+                <mat-pass-toggle-visibility #toggleVisibility matSuffix></mat-pass-toggle-visibility>
+                <input class="form-control"
+                [type]="toggleVisibility.type"
+                formControlName="password"
+                [formControl]="password"
+                [errorStateMatcher]="matcher"
+                matInput placeholder="Password">
+                <mat-error *ngIf="password.hasError('required')">
+                    <!-- Digite a senha. -->
+                </mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary"
+            type="submit" [disabled]="!form.valid">Enter</button>
+        </form>
+        <b> Not registered? </b>
+        <a [routerLink]="['/register']" routerLinkActive="router-link-active" >
+            <button mat-raised-button color="accent">Register</button>
+        </a>
+        <a [routerLink]="['/']" routerLinkActive="router-link-active" >
+            <b><i> Forgot your password? </i></b>
+        </a>
+    </mat-card>
+</div>

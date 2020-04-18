@@ -1,0 +1,29 @@
+<div *ngIf="!logged">
+    <a [routerLink]="['/register']" routerLinkActive="router-link-active" >
+        <button mat-raised-button color="primary">Register</button>
+    </a>
+    <a [routerLink]="['/login']" routerLinkActive="router-link-active">
+        <button mat-raised-button color="accent">Enter</button>
+    </a>
+</div>
+<div *ngIf="logged">
+    <p>Hi, {{userSystem?.nickreal}} !</p>
+    <mat-tab-group>
+        <mat-tab label="Overview">
+            <dev-overview
+            [userSystem] = "userSystem"
+            ></dev-overview>
+        </mat-tab>
+        <mat-tab label="Settings">
+            <dev-profile-config
+            [userSystem] = "userSystem"
+            ></dev-profile-config>
+        </mat-tab>
+        <mat-tab label="Play">
+            <dev-canvas
+            [userSystem] = "userSystem"
+            ></dev-canvas>
+        </mat-tab>
+    </mat-tab-group>
+    <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+</div>
